@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "getUserResponse") // danh dau phan tu goc file xml
 public class UserResponse {
-    private Long id;
+    private String id;
     private String fullName;
     private int age;
 }

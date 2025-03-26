@@ -1,17 +1,19 @@
 package hnt.example.entity;
 
-import jakarta.persistence.*;
-import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.Year;
 
 @Data
-@Entity
+@Document(collection = "users")
+//@Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long id;
     private String fullName;
     private Integer age;
 

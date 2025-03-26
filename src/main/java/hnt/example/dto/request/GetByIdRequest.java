@@ -11,5 +11,5 @@ import lombok.Data;
 @XmlRootElement(name = "getUserById", namespace = "http://example.com/user")
 public class GetByIdRequest {
     @XmlElement(name = "id", required = true)
-    private Long id;
+    private String id;
 }

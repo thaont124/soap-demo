@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @XmlRootElement(name = "updateUserRequest", namespace = "http://example.com/user") // danh dau phan tu goc file xml
 public class UpdateUserRequest {
     @XmlElement(name = "id", required = true)
-    private Long id;
+    private String id;
 
     @XmlElement(name = "fullName")
     private String fullName;

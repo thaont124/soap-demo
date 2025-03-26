@@ -26,7 +26,7 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
-    public UserResponse updateUser(Long id, UpdateUserRequest updateUserRequest) {
+    public UserResponse updateUser(String id, UpdateUserRequest updateUserRequest) {
         User user = userRepository.findById(id).orElseThrow(UserNotFoundException::new);
         if(updateUserRequest.getFullName() != null){
             user.setFullName(updateUserRequest.getFullName());
@@ -39,7 +39,7 @@ public class UserService {
         return objectMapper.convertValue(user, UserResponse.class);
     }
 
-    public UserResponse getUser(Long id) {
+    public UserResponse getUser(String id) {
         User user = userRepository.findById(id).orElseThrow(UserNotFoundException::new);
         return new UserResponse(user.getId(), user.getFullName(), user.getAge());
     }
@@ -50,9 +50,9 @@ public class UserService {
         return objectMapper.convertValue(user, UserResponse.class);
     }
 
-    public void deleteUser(Long id) {
+    public void deleteUser(String id) {
         if (!userRepository.existsById(id)) {
-            throw new RuntimeException("User not found");
+            throw new UserNotFoundException();
         }else {
             userRepository.deleteById(id);
         }

@@ -15,7 +15,7 @@
     <xs:element name="getUserById">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="id" type="xs:long"/>
+                <xs:element name="id" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -31,7 +31,7 @@
     <xs:element name="updateUserRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="id" type="xs:long"/>
+                <xs:element name="id" type="xs:string"/>
                 <xs:element name="fullName" type="xs:string"/>
                 <xs:element name="age" type="xs:int"/>
             </xs:sequence>
@@ -57,7 +57,7 @@
     <!-- Define -->
     <xs:complexType name="User">
         <xs:sequence>
-            <xs:element name="id" type="xs:long"/>
+            <xs:element name="id" type="xs:string"/>
             <xs:element name="fullName" type="xs:string"/>
             <xs:element name="age" type="xs:int"/>
         </xs:sequence>

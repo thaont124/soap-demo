@@ -2,21 +2,24 @@ spring:
     application:
         name: demo
 
-    datasource:
-        url: jdbc:mysql://127.0.0.1:3306/demo
-        username: root
-        password: 12042002
-        driver-class-name: com.mysql.cj.jdbc.Driver
-
-    jpa:
-        database-platform: org.hibernate.dialect.MySQL5Dialect
-        generate-ddl: true
-        hibernate:
-            ddl-auto: update
-        properties:
-            hibernate:
-                dialect: org.hibernate.dialect.MySQL8Dialect
-                globally_quoted_identifiers: true
+    data:
+        mongodb:
+            uri: mongodb://localhost:27017/demo
+#    datasource:
+#        url: jdbc:mysql://127.0.0.1:3306/demo
+#        username: root
+#        password: 12042002
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#
+#    jpa:
+#        database-platform: org.hibernate.dialect.MySQL5Dialect
+#        generate-ddl: true
+#        hibernate:
+#            ddl-auto: update
+#        properties:
+#            hibernate:
+#                dialect: org.hibernate.dialect.MySQL8Dialect
+#                globally_quoted_identifiers: true
 server:
     port: 8081
 
